@@ -14,7 +14,24 @@
     <style>
         .material-symbols-outlined {
             font-family: 'Material Symbols Outlined';
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Mobile Sidebar Slide Animation */
+        #mobileSidebar {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        #mobileSidebar.open {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        #mobileSidebar.closed {
+            transform: translateX(-100%);
+            opacity: 0;
         }
     </style>
 
@@ -51,36 +68,42 @@
                 </span>
             </a>
 
+            <!-- MOBILE MENU BUTTON -->
+            <button id="menuBtn" class="md:hidden text-green-700 dark:text-primary text-3xl">
+                ☰
+            </button>
 
-        <!-- MOBILE MENU BUTTON -->
-        <button id="menuBtn" class="md:hidden text-green-700 dark:text-primary text-3xl">
-            ☰
-        </button>
+            <!-- NAVIGATION DESKTOP -->
+            <nav class="hidden md:flex items-center gap-12">
+                <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                    href="index.html">Home</a>
+                <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                    href="plant catlog.html">Our Plants</a>
+                <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                    href="Aboutus.html">About</a>
+                <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                    href="Contactus.html">Contact</a>
+            </nav>
+        </header>
 
-        <!-- NAVIGATION DESKTOP -->
-        <nav class="hidden md:flex items-center gap-12">
-            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
-                href="index.html">Home</a>
-            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
-                href="plant catlog.html">Our Plants</a>
-            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
-                href="Aboutus.html">About</a>
-            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
-                href="Contactus.html">Contact</a>
-        </nav>
-    </header>
+        <!-- ========================= MOBILE SIDEBAR MENU ========================= -->
+        <div id="mobileSidebar"
+            class="md:hidden fixed top-0 left-0 h-full w-64 bg-white dark:bg-background-dark shadow-lg z-50 flex flex-col p-6">
 
-    <!-- MOBILE SIDEBAR MENU -->
-    <div id="mobileSidebar" class="md:hidden fixed top-0 left-0 h-full w-64 bg-white dark:bg-background-dark shadow-lg z-50 closed flex flex-col p-6">
-        <button id="closeSidebar" class="self-end text-2xl font-bold mb-6">×</button>
-        <ol class="flex flex-col gap-6 text-lg font-medium text-gray-800 dark:text-gray-300">
-            <li><a href="index.html" class="hover:text-green-700 dark:hover:text-primary">Home</a></li>
-            <li><a href="plant catlog.html" class="hover:text-green-700 dark:hover:text-primary">Our Plants</a></li>
-            <li><a href="Aboutus.html" class="hover:text-green-700 dark:hover:text-primary">About</a></li>
-            <li><a href="Contactus.html" class="hover:text-green-700 dark:hover:text-primary">Contact</a></li>
-        </ol>
-    </div>
+            <div class="flex w-full justify-end">
+                <button id="closeSidebar" class="text-3xl font-bold text-red-500 mb-6">×</button>
+            </div>
 
+            <ol class="flex flex-col gap-6 text-lg font-medium text-gray-800 dark:text-gray-300">
+                <li><a href="index.html" class="hover:text-green-700 dark:hover:text-primary">Home</a></li>
+                <li><a href="plant catlog.html" class="hover:text-green-700 dark:hover:text-primary">Our Plants</a></li>
+                <li><a href="Aboutus.html" class="hover:text-green-700 dark:hover:text-primary">About</a></li>
+                <li><a href="Contactus.html" class="hover:text-green-700 dark:hover:text-primary">Contact</a></li>
+            </ol>
+        </div>
+
+
+        <!-- ========================= MAIN ========================= -->
         <main class="flex flex-col items-center w-full">
             <div class="flex flex-col w-full max-w-5xl px-4 sm:px-8 py-10 sm:py-16">
 
@@ -97,7 +120,7 @@
                             </p>
                         </div>
                         <a href="plant catlog.html"
-                            class="h-12 px-5 bg-primary text-white rounded-lg font-bold bg-green-1000 flex items-center justify-center">
+                            class="h-12 px-5 bg-primary text-white rounded-lg font-bold flex items-center justify-center">
                             Explore Our Nursery
                         </a>
                     </div>
@@ -129,30 +152,26 @@
                 </header>
 
                 <!-- ========================= FEATURES ========================= -->
-<section class="py-10 bg-background-light dark:bg-background-dark text-center px-6 lg:px-20">
-  <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Our Mission Values</h2>
+                <section class="py-10 bg-background-light dark:bg-background-dark text-center px-6 lg:px-20">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Our Mission Values</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-    <!-- Value 1 -->
-    <div class="flex flex-col items-center">
-      <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Customer Commitment</h3>
-      <p class="text-gray-800 dark:text-gray-300 text-center">We ensure guidance, support, and reliable service for every gardening enthusiast. Our customers are at the heart of everything we do. We provide expert guidance, timely support, and reliable service to ensure that everyone.</p>
-    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Customer Commitment</h3>
+                            <p class="text-gray-800 dark:text-gray-300 text-center">We ensure guidance, support, and reliable service for every gardening enthusiast. Our customers are at the heart of everything we do. We provide expert guidance, timely support, and reliable service to ensure that everyone.</p>
+                        </div>
 
-    <!-- Value 2 -->
-    <div class="flex flex-col items-center">
-      <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Expert Guidance</h3>
-      <p class="text-gray-800 dark:text-gray-300 text-center">We guide you in nurturing your green space with proper care and knowledge. By promoting sustainable cultivation, we ensure that our gardens contribute positively to the planet while setting an example for greener living.</p>
-    </div>
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Expert Guidance</h3>
+                            <p class="text-gray-800 dark:text-gray-300 text-center">We guide you in nurturing your green space with proper care and knowledge. By promoting sustainable cultivation, we ensure that our gardens contribute positively to the planet while setting an example for greener living.</p>
+                        </div>
 
-    <!-- Value 3 -->
-    <div class="flex flex-col items-center">
-      <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Sustainable Growth</h3>
-      <p class="text-gray-800 dark:text-gray-300 text-center"> Our goal is to provide greenery that thrives in homes, gardens, and farms, giving our customers long-lasting and beautiful plants. We promote eco-friendly gardening practices for a greener future.</p>
-    </div>
-  </div>
-</section>
-
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Sustainable Growth</h3>
+                            <p class="text-gray-800 dark:text-gray-300 text-center">Our goal is to provide greenery that thrives in homes, gardens, and farms, giving our customers long-lasting and beautiful plants. We promote eco-friendly gardening practices for a greener future.</p>
+                        </div>
+                    </div>
+                </section>
 
                 <!-- ========================= GALLERY ========================= -->
                 <section class="py-16">
@@ -202,7 +221,7 @@
                             </a>
                         </div>
 
-                        <!-- RIGHT : FIXED VISIT US SECTION -->
+                        <!-- RIGHT : VISIT US SECTION -->
                         <div class="space-y-6">
 
                             <h3 class="text-2xl font-bold text-gray-900">Visit Us</h3>
@@ -265,46 +284,50 @@
         </footer>
 
     </div>
+
     <!-- ========================= WHATSAPP FLOAT BUTTON ========================= -->
-   <!-- WHATSAPP FLOATING BUTTON -->
-  <a href="https://wa.me/9361169980?text=Hi%20I%20am%20interested%20in%20your%20plants"
-    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl shadow-green-400 animate-bounce"
-    target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-10 h-10">
-  </a>
+    <a href="https://wa.me/9361169980?text=Hi%20I%20am%20interested%20in%20your%20plants"
+        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl shadow-green-400 animate-bounce"
+        target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-10 h-10">
+    </a>
 
-<!-- JS to send Email + WhatsApp -->
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault(); // prevent default submission
+    <!-- ========================= MOBILE SIDEBAR JS ========================= -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileSidebar = document.getElementById("mobileSidebar");
+        const closeSidebar = document.getElementById("closeSidebar");
 
-      const name = document.querySelector("input[name='name']").value;
-      const email = document.querySelector("input[name='email']").value;
-      const phone = document.querySelector("input[name='phone']").value;
-      const message = document.querySelector("textarea[name='message']").value;
+        // Initially hide sidebar
+        mobileSidebar.classList.add("closed");
+        mobileSidebar.classList.remove("open");
 
-      // WhatsApp URL
-      const whatsappMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
-      const whatsappURL = `https://wa.me/9361169980?text=${encodeURIComponent(whatsappMessage)}`;
-      window.open(whatsappURL, "_blank");
-
-      // Send Email via PHP
-      fetch("send_message.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&message=${encodeURIComponent(message)}`
-      })
-        .then(res => res.text())
-        .then(response => {
-          if (response.trim() === "success") {
-            alert("Thanks for your Response ❤!");
-            document.getElementById("contactForm").reset();
-          } else {
-            alert("Thanks for your Response ❤!");
-          }
+        // Open sidebar
+        menuBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            mobileSidebar.classList.add("open");
+            mobileSidebar.classList.remove("closed");
         });
-    });
-  </script>
+
+        // Close sidebar with close (×) button
+        closeSidebar.addEventListener("click", () => {
+            mobileSidebar.classList.add("closed");
+            mobileSidebar.classList.remove("open");
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!mobileSidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileSidebar.classList.add("closed");
+                mobileSidebar.classList.remove("open");
+            }
+        });
+
+        // Prevent closing when clicking inside sidebar
+        mobileSidebar.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+    </script>
 
 </body>
 
