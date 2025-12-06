@@ -51,17 +51,35 @@
                 </span>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8">
-                <a class="text-sm font-medium text-gray-800 hover:text-green-700"
-                    href="index.html">Home</a>
-                <a class="text-sm font-medium text-gray-800 hover:text-green-700"
-                    href="plant catlog.html">Our Plants</a>
-                <a class="text-sm font-medium text-gray-800 hover:text-green-700"
-                    href="Aboutus.html">About</a>
-                <a class="text-sm font-medium text-gray-800 hover:text-green-700"
-                    href="Contactus.html">Contact</a>
-            </nav>
-        </header>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button id="menuBtn" class="md:hidden text-green-700 dark:text-primary text-3xl">
+            ☰
+        </button>
+
+        <!-- NAVIGATION DESKTOP -->
+        <nav class="hidden md:flex items-center gap-12">
+            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                href="index.html">Home</a>
+            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                href="plant catlog.html">Our Plants</a>
+            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                href="Aboutus.html">About</a>
+            <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+                href="Contactus.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MOBILE SIDEBAR MENU -->
+    <div id="mobileSidebar" class="md:hidden fixed top-0 left-0 h-full w-64 bg-white dark:bg-background-dark shadow-lg z-50 closed flex flex-col p-6">
+        <button id="closeSidebar" class="self-end text-2xl font-bold mb-6">×</button>
+        <ol class="flex flex-col gap-6 text-lg font-medium text-gray-800 dark:text-gray-300">
+            <li><a href="index.html" class="hover:text-green-700 dark:hover:text-primary">Home</a></li>
+            <li><a href="plant catlog.html" class="hover:text-green-700 dark:hover:text-primary">Our Plants</a></li>
+            <li><a href="Aboutus.html" class="hover:text-green-700 dark:hover:text-primary">About</a></li>
+            <li><a href="Contactus.html" class="hover:text-green-700 dark:hover:text-primary">Contact</a></li>
+        </ol>
+    </div>
 
         <main class="flex flex-col items-center w-full">
             <div class="flex flex-col w-full max-w-5xl px-4 sm:px-8 py-10 sm:py-16">
@@ -79,7 +97,7 @@
                             </p>
                         </div>
                         <a href="plant catlog.html"
-                            class="h-12 px-5 bg-primary text-white rounded-lg font-bold hover:bg-green-600">
+                            class="h-12 px-5 bg-primary text-white rounded-lg font-bold bg-green-1000 flex items-center justify-center">
                             Explore Our Nursery
                         </a>
                     </div>
@@ -111,26 +129,30 @@
                 </header>
 
                 <!-- ========================= FEATURES ========================= -->
-                <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- CARD -->
-                    <div class="flex flex-col items-center gap-4 border rounded-xl p-6 bg-white">
-                        <span class="material-symbols-outlined text-4xl">eco</span>
-                        <h3 class="text-lg font-bold">Wide Variety</h3>
-                        <p class="text-sm">We provide healthy, premium-grade plants.</p>
-                    </div>
+<section class="py-10 bg-background-light dark:bg-background-dark text-center px-6 lg:px-20">
+  <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Our Mission Values</h2>
 
-                    <div class="flex flex-col items-center gap-4 border rounded-xl p-6 bg-white">
-                        <span class="material-symbols-outlined text-4xl">compost</span>
-                        <h3 class="text-lg font-bold">Sustainable Practices</h3>
-                        <p class="text-sm">Promoting eco-friendly gardening for all.</p>
-                    </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Value 1 -->
+    <div class="flex flex-col items-center">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Customer Commitment</h3>
+      <p class="text-gray-800 dark:text-gray-300 text-center">We ensure guidance, support, and reliable service for every gardening enthusiast. Our customers are at the heart of everything we do. We provide expert guidance, timely support, and reliable service to ensure that everyone.</p>
+    </div>
 
-                    <div class="flex flex-col items-center gap-4 border rounded-xl p-6 bg-white">
-                        <span class="material-symbols-outlined text-4xl">support_agent</span>
-                        <h3 class="text-lg font-bold">Expert Guidance</h3>
-                        <p class="text-sm">We guide you in nurturing your green space.</p>
-                    </div>
-                </section>
+    <!-- Value 2 -->
+    <div class="flex flex-col items-center">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Expert Guidance</h3>
+      <p class="text-gray-800 dark:text-gray-300 text-center">We guide you in nurturing your green space with proper care and knowledge. By promoting sustainable cultivation, we ensure that our gardens contribute positively to the planet while setting an example for greener living.</p>
+    </div>
+
+    <!-- Value 3 -->
+    <div class="flex flex-col items-center">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-primary mb-2">Sustainable Growth</h3>
+      <p class="text-gray-800 dark:text-gray-300 text-center"> Our goal is to provide greenery that thrives in homes, gardens, and farms, giving our customers long-lasting and beautiful plants. We promote eco-friendly gardening practices for a greener future.</p>
+    </div>
+  </div>
+</section>
+
 
                 <!-- ========================= GALLERY ========================= -->
                 <section class="py-16">
@@ -243,6 +265,46 @@
         </footer>
 
     </div>
+    <!-- ========================= WHATSAPP FLOAT BUTTON ========================= -->
+   <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/9361169980?text=Hi%20I%20am%20interested%20in%20your%20plants"
+    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl shadow-green-400 animate-bounce"
+    target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-10 h-10">
+  </a>
+
+<!-- JS to send Email + WhatsApp -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent default submission
+
+      const name = document.querySelector("input[name='name']").value;
+      const email = document.querySelector("input[name='email']").value;
+      const phone = document.querySelector("input[name='phone']").value;
+      const message = document.querySelector("textarea[name='message']").value;
+
+      // WhatsApp URL
+      const whatsappMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+      const whatsappURL = `https://wa.me/9361169980?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappURL, "_blank");
+
+      // Send Email via PHP
+      fetch("send_message.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&message=${encodeURIComponent(message)}`
+      })
+        .then(res => res.text())
+        .then(response => {
+          if (response.trim() === "success") {
+            alert("Thanks for your Response ❤!");
+            document.getElementById("contactForm").reset();
+          } else {
+            alert("Thanks for your Response ❤!");
+          }
+        });
+    });
+  </script>
 
 </body>
 
