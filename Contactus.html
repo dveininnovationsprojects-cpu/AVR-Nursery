@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVR Nursery</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13ec13",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102210",
+          },
+          fontFamily: {
+            display: ["Be Vietnam Pro"]
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+
+  <div class="flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header
+      class="flex items-center justify-between border-b border-green-200/50 dark:border-green-800/50 px-6 lg:px-20 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="AVR Nursery Logo"
+          class="h-20 w-20 object-cover rounded-full border border-green-300">
+        <span class="text-xl font-extrabold text-green-700 dark:text-primary uppercase">
+          AVR Nursery
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+          href="index.html">Home</a>
+        <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+          href="plant catlog.html">Our Plants</a>
+        <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+          href="Aboutus.html">About</a>
+        <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-green-700 dark:hover:text-primary"
+          href="Contactus.html">Contact</a>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-4 lg:px-20 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+        <!-- Form -->
+        <div class="space-y-6">
+          <form id="contactForm" class="space-y-6">
+
+            <div class="flex flex-col gap-3">
+              <h1 class="text-green-500 dark:text-white text-3xl sm:text-5xl font-extrabold">
+                Get in Touch
+              </h1>
+              <p class="text-gray-500 dark:text-gray-400 text-lg">
+                We'd love to hear from you! Reach out for inquiries, feedback, or questions about plant care.
+              </p>
+            </div>
+
+            <div>
+              <label class="block text-base font-medium text-[#121b0d] dark:text-gray-200 pb-2">
+                Full Name
+              </label>
+              <input type="text" name="name" required placeholder="Enter your full name"
+                class="form-input w-full h-14 rounded-lg p-4 text-base border-gray-300 dark:border-gray-600 bg-background-light dark:bg-background-dark/50 shadow-sm text-[#121b0d] dark:text-white">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-base font-medium pb-2 text-[#121b0d] dark:text-gray-200">
+                  Email Address
+                </label>
+                <input type="email" name="email" required placeholder="Enter your email address"
+                  class="form-input w-full h-14 rounded-lg p-4 text-base border-gray-300 dark:border-gray-600 bg-background-light dark:bg-background-dark/50 shadow-sm text-[#121b0d] dark:text-white">
+              </div>
+
+              <div>
+                <label class="block text-base font-medium pb-2 text-[#121b0d] dark:text-gray-200">
+                  Contact Number
+                </label>
+                <input type="tel" name="phone" required placeholder="Enter your contact number"
+                  class="form-input w-full h-14 rounded-lg p-4 text-base border-gray-300 dark:border-gray-600 bg-background-light dark:bg-background-dark/50 shadow-sm text-[#121b0d] dark:text-white">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-base font-medium pb-2 text-[#121b0d] dark:text-gray-200">
+                Your Message
+              </label>
+              <textarea name="message" rows="5" required placeholder="Type your message here..."
+                class="form-textarea w-full rounded-lg p-4 text-base border-gray-300 dark:border-gray-600 bg-background-light dark:bg-background-dark/50 shadow-sm text-[#121b0d] dark:text-white"></textarea>
+            </div>
+
+            <button type="submit"
+              class="inline-flex items-center justify-center px-10 py-3.5 text-base font-medium text-white rounded-lg bg-green-500 bg-primary">
+              Send Message
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Right Content (Image + Details) -->
+        <div class="space-y-8">
+
+          <!-- Image -->
+          <div class="relative w-full h-80 rounded-xl overflow-hidden shadow-lg bg-white">
+            <img src="date.jpg" class="w-full h-full object-contain p-4">
+          </div>
+
+          <!-- Details Block -->
+          <div class="p-6 bg-white dark:bg-background-dark/50 border border-gray-200/50 dark:border-gray-700/50 rounded-xl shadow-sm">
+
+            <h3 class="text-xl font-bold text-[#121b0d] dark:text-white mb-6">Our Details</h3>
+
+            <div class="space-y-5">
+
+              <!-- Location -->
+              <div class="flex items-start gap-3">
+                <svg class="h-7 w-7" fill="#FF0000" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z" />
+                </svg>
+                <p class="text-gray-800 dark:text-gray-300 leading-relaxed">
+                  AVR Nursery, No 22, Melmaruvathur,<br>Chengalpattu District, Tamil Nadu, 603310
+                </p>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-center gap-3">
+                <svg class="h-7 w-7" fill="#FF0000" viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.48 2.53.74 3.88.74a1 1 0 011 1V20a1 1 0 01-1 1C9.94 21 3 14.06 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.25 2.67.74 3.88a1 1 0 01-.27 1.11l-2.35 2.35z" />
+                </svg>
+                <p class="text-gray-800 dark:text-gray-300">9361169980</p>
+              </div>
+
+              <!-- Timing -->
+              <div class="flex items-center gap-3">
+                <svg class="h-7 w-7" fill="#FF0000" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H5V8h14v13zm-7-11h2v6h-4v-4h2z" />
+                </svg>
+                <p class="text-gray-800 dark:text-gray-300">Monday–Sunday, 24 Hours</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="h-10"></div>
+
+      <!-- FOOTER -->
+      <footer class="border-t border-green-200/50 dark:hover:border-green-800/100 mt-10 pt-8 pb-5 px-6 lg:px-20">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <div>
+            <h4 class="font-bold text-gray-900 dark:text-gray-100">AVR Nursery</h4>
+            <p class="mt-2 text-sm text-gray-800 dark:text-gray-300">
+              Your green oasis in Melmaruvathur, Chengalpattu.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-gray-900 dark:text-gray-100">Join Our Community</h4>
+            <p class="mt-2 text-sm text-gray-800 dark:text-gray-300">
+              Get tips, offers, and updates.<br>
+              <span>avrnursery00@gmail.com</span>
+            </p>
+
+            <div class="flex gap-4 mt-3">
+              <!-- Instagram -->
+              <svg class="h-7 w-7" fill="#FF0000" viewBox="0 0 24 24">
+                <path
+                  d="M7.75 2h8.5A5.76 5.76 0 0122 7.75v8.5A5.76 5.76 0 0116.25 22h-8.5A5.76 5.76 0 012 16.25v-8.5A5.76 5.76 0 017.75 2zm0 1.5A4.26 4.26 0 003.5 7.75v8.5A4.26 4.26 0 007.75 20.5h8.5a4.26 4.26 0 004.25-4.25v-8.5A4.26 4.26 0 0016.25 3.5h-8.5zm8.75 2a.75.75 0 110 1.5.75.75 0 010-1.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
+              </svg>
+
+              <!-- YouTube -->
+              <svg class="h-7 w-7" fill="#FF0000" viewBox="0 0 24 24">
+                <path d="M10 15l5.19-3L10 9v6zm12-6.5v7c0 
+                            1.38-1.12 2.5-2.5 2.5H4.5C3.12 18 2 16.88 2 
+                            15.5v-7C2 6.12 3.12 5 4.5 5h15c1.38 0 2.5 
+                            1.12 2.5 2.5z" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          class="mt-8 pt-5 border-t border-green-200/50 dark:border-green-800/50 text-center text-sm text-gray-600 dark:text-gray-400">
+          © 2025 AVR Nursery. All Rights Reserved.
+        </div>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/9361169980?text=Hi%20I%20am%20interested%20in%20your%20plants"
+    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl shadow-green-400 animate-bounce"
+    target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-10 h-10">
+  </a>
+
+  <!-- JS to send Email + WhatsApp -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent default submission
+
+      const name = document.querySelector("input[name='name']").value;
+      const email = document.querySelector("input[name='email']").value;
+      const phone = document.querySelector("input[name='phone']").value;
+      const message = document.querySelector("textarea[name='message']").value;
+
+      // WhatsApp URL
+      const whatsappMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+      const whatsappURL = `https://wa.me/9361169980?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappURL, "_blank");
+
+      // Send Email via PHP
+      fetch("send_message.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&message=${encodeURIComponent(message)}`
+      })
+        .then(res => res.text())
+        .then(response => {
+          if (response.trim() === "success") {
+            alert("Thanks for your Response ❤!");
+            document.getElementById("contactForm").reset();
+          } else {
+            alert("Thanks for your Response ❤!");
+          }
+        });
+    });
+  </script>
+
+</body>
+</html>
